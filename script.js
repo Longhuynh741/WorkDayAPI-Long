@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     function showDate() {
         // set parameters to allow for a 12 hr clock and not a 24hr one
-        
+
         if (h == 0) {
             h = 12;
         }
@@ -58,7 +58,8 @@ $(document).ready(function () {
 
     }
     showDate(); 
-
+    //Here we create an event listener for each submit button.
+    // The event listener should be able to record the user's input and store it into the local storage. 
     $(".submit-btn").on("click", function (event) {
         event.preventDefault();
         // console.log("you clicked me");
@@ -68,6 +69,8 @@ $(document).ready(function () {
     });
  
     // This can be made into a for loop. Confused on how to though. 
+    // Here are are assigning each time-block ID with the value from our local storage. 
+    // Whatever the user inputed prior was saved and we can now pull it into the html, which is the form-control area of each individual class 
 
     $("#9AM .form-control").val(localStorage.getItem("9AM"));
     $("#10AM .form-control").val(localStorage.getItem("10AM"));
