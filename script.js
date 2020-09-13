@@ -22,20 +22,24 @@ $(document).ready(function () {
         "3PM",
         "4PM",
     ];
+
+
+    var date = new Date();
+
+    //Set variables for the date/time 
+    // use get. method to have jQuery pull the local time/date
+
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    var d = date.getDate();
+    var h = date.getHours(); 
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var session = " AM";
+
     function showDate() {
-        var date = new Date();
-
-        //Set variables for the date/time 
-        // use get. method to have jQuery pull the local time/date
-        var month = date.getMonth();
-        var year = date.getFullYear();
-
-        var d = date.getDate();
-        var h = date.getHours(); 
-        var m = date.getMinutes();
-        var s = date.getSeconds();
-        var session = " AM";
         // set parameters to allow for a 12 hr clock and not a 24hr one
+        
         if (h == 0) {
             h = 12;
         }
@@ -51,6 +55,7 @@ $(document).ready(function () {
 
         $("#currentDay").text(currrentDate);
         $("#currentTime").text(realTime);
+
     }
     showDate(); 
 
@@ -76,34 +81,5 @@ $(document).ready(function () {
 
 
 
-
-
-
-    //for (var i = 0; i < 9; i++) {
-        //console.log(localStorage.key(i));
-        // console.log(timesArray[i]);
-
-    // if (timesArray[i] == localStorage.key(i))  {
-         // console.log("i did it");
-        // console.log(localStorage.getItem((i), text));
-        // $("#9AM .input-group").val(localStorage.getItem(i)); } }
-        
-        
-        
-        
-        
-        
-        
-    
-    // $(".form-control").val(localStorage.getItem("9AM"));
-    // var timeBlockArray = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-    // for (var i = 0; i < timeBlockArray.length; i++) {
-    //     var newRow = $("<div>"); 
-    //     // Arrays for time. Make classes and elements 
-    //     var newTime = $("<div>");
-    //     newTime.addClass("col-md-2 timeStamp");
-    //     newTime.text(timeBlockArray[i]);
-    //     $("#test").append(newTime);
-    // }
 
 });
